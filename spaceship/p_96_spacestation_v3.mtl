@@ -1,0 +1,38 @@
+# Blender 5.0.1 MTL File: 'p_96_spacestation_v3.blend'
+# www.blender.org
+
+newmtl spacestation_main
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd spacestation_main_albedo.jpeg
+map_Ks spacestation_main_metallic.jpeg
+
+newmtl spacestation_main2
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd spacestation_main2_albedo.jpeg
+map_Ks spacestation_main2_metallic.jpeg
+
+newmtl spacestation_smalllights
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd spacestation_smalllights_albedo.jpeg
+map_Ks spacestation_smalllights_metallic.jpeg
