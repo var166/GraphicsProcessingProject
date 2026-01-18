@@ -27,9 +27,7 @@ namespace gps {
     };
 
     struct Texture {
-
         GLuint id;
-        //ambientTexture, diffuseTexture, specularTexture
         std::string type;
         std::string path;
     };
@@ -48,26 +46,22 @@ namespace gps {
     };
 
     class Mesh {
-
     public:
         std::vector<Vertex> vertices;
         std::vector<GLuint> indices;
         std::vector<Texture> textures;
+        std::string name;
 
 	    Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures);
+        Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures, std::string name);
 
 	    Buffers getBuffers();
 
 	    void Draw(gps::Shader shader);
 
     private:
-        /*  Render data  */
         Buffers buffers;
-
-	    // Initializes all the buffer objects/arrays
 	    void setupMesh();
-
     };
-
 }
-#endif /* Mesh_hpp */
+#endif

@@ -2,9 +2,7 @@
 
 namespace gps {
 
-    //Camera constructor
     Camera::Camera(glm::vec3 cameraPosition, glm::vec3 cameraTarget, glm::vec3 cameraUp) {
-        //TODO
         this->cameraPosition = cameraPosition;
         this->cameraTarget = cameraTarget;
         this->cameraUpDirection = cameraUp;
@@ -13,18 +11,14 @@ namespace gps {
 
     }
 
-    //return the view matrix, using the glm::lookAt() function
     glm::mat4 Camera::getViewMatrix() {
-        //TODO
-
         return glm::lookAt(cameraPosition, cameraTarget, this->cameraUpDirection);
     }
 
-    //update the camera internal parameters following a camera move event
     void Camera::move(MOVE_DIRECTION direction, float speed) {
-        //TODO
         glm::vec3 front = glm::normalize(cameraTarget - cameraPosition);
         glm::vec3 right = glm::normalize(glm::cross(front, cameraUpDirection));
+        glm::vec3 up = glm::normalize(glm::cross(front, right));
 
         switch (direction) {
             case MOVE_FORWARD:
@@ -43,15 +37,19 @@ namespace gps {
                 cameraPosition -= right * speed;
                 cameraTarget -= right * speed;
                 break;
+            case MOVE_UP:
+                cameraPosition -= up * speed;
+                cameraTarget -= up * speed;
+                break;
+            case MOVE_DOWN:
+                cameraPosition += up * speed;
+                cameraTarget += up * speed;
+                break;
         }
 
     }
 
-    //update the camera internal parameters following a camera rotate event
-    //yaw - camera rotation around the y axis
-    //pitch - camera rotation around the x axis
     void Camera::rotate(float pitch, float yaw) {
-        //TODO
         glm::vec3 direction = glm::normalize(cameraTarget - cameraPosition);
 
         glm::mat4 rotation = glm::rotate(glm::mat4(1.0f), glm::radians(yaw), glm::vec3(0.0f, 1.0f, 0.0f));
@@ -63,5 +61,11 @@ namespace gps {
 
         cameraTarget = cameraPosition + direction;
 
+    }
+    void Camera::moveCameraPosition(glm::vec3 position) {
+        cameraPosition = position;
+    }
+    void Camera::setLookAt(glm::vec3 target) {
+        cameraTarget = target;
     }
 }

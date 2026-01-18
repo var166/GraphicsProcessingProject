@@ -39,4 +39,4 @@ namespace gps {
     
 }
 
-#endif /* Shader_hpp */
+#endif

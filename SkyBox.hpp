@@ -36,4 +36,4 @@ namespace gps {
     };
 }
 
-#endif /* SkyBox_hpp */
+#endif

@@ -37,4 +37,4 @@ namespace gps {
     };
 }
 
-#endif //WINDOW_H
+#endif
